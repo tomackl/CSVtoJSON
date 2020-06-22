@@ -11,10 +11,9 @@ class CSVtoJSON:
         """
 
         """
-        self._json = ""
         self._fp = path.Path(fp)
         self._csv = []
-        self._json = ""
+        self._json = None
 
     def check_fp(self):
         """
@@ -26,13 +25,21 @@ class CSVtoJSON:
     def open_file(self):
         """
         Open the csv file and save the contents as a list of dictionaries.
-        :return:
         """
         with open(self._fp, newline='', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self._csv.append(row)
 
-
     def dumps(self):
+        """
+        Convert self._csv to JSON.
+        """
         self._json = json.dumps(self._csv)
+
+    def loads(self):
+        """
+        Convert self._json to dictionary.
+        :return: dict
+        """
+        return json.loads(self._json)

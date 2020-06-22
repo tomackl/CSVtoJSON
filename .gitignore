@@ -1,2 +1,11 @@
 # Project exclude paths
 /venv/
+/.idea/
+/src/CSVtoJSON.egg-info/
+/resources/CABLES Olex Single Phase 1C Cu Al X-90 Table Database.csv
+/resources/CABLES Olex Single Phase 1C Cu Al X-90 Table Database-1.csv
+dist/
+dist_previous/
+docs/
+resources/
+tests/func/
